@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+
+    <h4 class="mb-3 fw-bold border-bottom pb-2">Products List</h4>
+
+    <div class="mb-4">
+        <div class="d-flex flex-column flex-sm-row gap-2">
+            <input type="text" id="searchInput" class="form-control border-dark" placeholder="Search products...">
+            <button class="btn btn-dark d-flex align-items-center justify-content-center" type="button">
+                <i class="fas fa-magnifying-glass me-1"></i> Search
+            </button>
+        </div>
+    </div>
+
+
+    <div class="card shadow-sm rounded">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered align-middle text-center mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th>Stock</th>
+                        <th>Price</th>
+                        <th>Date Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Product A</td>
+                        <td>Electronics</td>
+                        <td>Brand X</td>
+                        <td>50</td>
+                        <td>$40</td>
+                        <td>2025-08-20</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Product B</td>
+                        <td>Furniture</td>
+                        <td>Brand Y</td>
+                        <td>20</td>
+                        <td>$50</td>
+                        <td>2025-08-18</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>Product C</td>
+                        <td>Clothing</td>
+                        <td>Brand Z</td>
+                        <td>100</td>
+                        <td>$30</td>
+                        <td>2025-08-15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
