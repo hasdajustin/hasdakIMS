@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}Stock{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+
+    <!-- Page Title -->
+    <h4 class="mb-3 fw-bold border-bottom pb-2">Stock Overview</h4>
+
+    <!-- Search Bar -->
+    <div class="mb-4">
+        <div class="d-flex flex-column flex-sm-row gap-2">
+            <input type="text" id="stockSearchInput" class="form-control border-dark" placeholder="Search products by name or category...">
+            <button class="btn btn-dark d-flex align-items-center justify-content-center" type="button">
+                <i class="fas fa-magnifying-glass me-1"></i> Search
+            </button>
+        </div>
+    </div>
+
+    <!-- Stock Table -->
+    <div class="card shadow-sm rounded">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered align-middle text-center mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th>Stock</th>
+                        <th>Status</th>
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Product A</td>
+                        <td>Electronics</td>
+                        <td>Brand X</td>
+                        <td>50</td>
+                        <td><span class="badge bg-success">In Stock</span></td>
+                        <td>2025-08-20</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Product B</td>
+                        <td>Furniture</td>
+                        <td>Brand Y</td>
+                        <td>5</td>
+                        <td><span class="badge bg-warning text-dark">Low Stock</span></td>
+                        <td>2025-08-18</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>Product C</td>
+                        <td>Clothing</td>
+                        <td>Brand Z</td>
+                        <td>0</td>
+                        <td><span class="badge bg-danger">Out of Stock</span></td>
+                        <td>2025-08-15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!-- Search Script -->
+<script>
+document.getElementById('stockSearchInput').addEventListener('keyup', function () {
+    const filter = this.value.toLowerCase();
+    document.querySelectorAll('table tbody tr').forEach(row => {
+        row.style.display = row.textContent.toLowerCase().includes(filter) ? '' : 'none';
+    });
+});
+</script>
+{% endblock %}
